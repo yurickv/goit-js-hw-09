@@ -51,9 +51,9 @@ flatpickr(toChoseDate, options);
 
 function timer() {
     if (!onStartBTN.getAttribute('disabled')) {
-        timerId = setInterval(() => {
-        const curretDate = new Date;
-        timerCountTime = targetDate - curretDate; 
+        let timerId = setInterval(() => {
+        
+        timerCountTime = targetDate - Date.now(); 
         console.log(timerCountTime)
         onDisplayData(convertMs(timerCountTime));  
             
