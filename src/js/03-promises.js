@@ -10,7 +10,11 @@ let amountStepOfPromise = inputForm.elements.amount;
 
 function onSubmitClick(event) {
   event.preventDefault();
-   
+  if (Number(firstDelay.value) < 0 || Number(nextDelay.value) < 0 || Number(amountStepOfPromise.value) <=0) {
+    Notify.failure("Please choose a digit biggest > than 0 ");
+    return;
+  } 
+  
   let delay = Number(firstDelay.value);
 
   for (let i = 0; i < amountStepOfPromise.value; i += 1) {
